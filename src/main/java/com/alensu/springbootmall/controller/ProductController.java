@@ -1,14 +1,14 @@
 package com.alensu.springbootmall.controller;
 
+import com.alensu.springbootmall.dto.ProductRequest;
 import com.alensu.springbootmall.model.Product;
 import com.alensu.springbootmall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 public class ProductController {
@@ -28,5 +28,19 @@ public class ProductController {
         }
 
 
+    }
+
+
+    @PostMapping("/products")
+    public ResponseEntity<Product> createProduct(@RequestBody @Valid ProductRequest productRequest) {
+
+        System.out.println(productRequest.getCategory().toString());
+
+
+        Integer productId = productService.createProduct(productRequest);
+
+        Product product = productService.getProductById(productId);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(product);
     }
 }

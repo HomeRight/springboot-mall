@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.validation.Valid;
+import java.util.List;
 
 public interface ProductService {
 
@@ -17,4 +18,6 @@ public interface ProductService {
     void updateProduct(Integer productId, ProductRequest productRequest);
 
     void deleteProduct(Integer productId);
+
+    List<Product> getProducts();
 }

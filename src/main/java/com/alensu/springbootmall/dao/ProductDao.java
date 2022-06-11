@@ -3,6 +3,8 @@ package com.alensu.springbootmall.dao;
 import com.alensu.springbootmall.dto.ProductRequest;
 import com.alensu.springbootmall.model.Product;
 
+import java.util.List;
+
 public interface ProductDao {
 
     Product getProductById(Integer id);
@@ -12,4 +14,6 @@ public interface ProductDao {
     void updateProduct(Integer productId, ProductRequest productRequest);
 
     void deleteProduct(Integer productId);
+
+    List<Product> getProducts();
 }

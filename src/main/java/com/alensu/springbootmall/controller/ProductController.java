@@ -1,5 +1,6 @@
 package com.alensu.springbootmall.controller;
 
+import com.alensu.springbootmall.constant.ProductCategory;
 import com.alensu.springbootmall.dto.ProductRequest;
 import com.alensu.springbootmall.model.Product;
 import com.alensu.springbootmall.service.ProductService;
@@ -20,8 +21,9 @@ public class ProductController {
 
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getProducts() {
-        List<Product> products = productService.getProducts();
+    public ResponseEntity<List<Product>> getProducts(@RequestParam(required = false) ProductCategory category,
+                                                     @RequestParam(required = false) String search) {
+        List<Product> products = productService.getProducts(category, search);
         return ResponseEntity.status(HttpStatus.OK).body(products);
     }
 

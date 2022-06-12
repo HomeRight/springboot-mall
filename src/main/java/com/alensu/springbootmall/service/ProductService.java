@@ -1,6 +1,7 @@
 package com.alensu.springbootmall.service;
 
 import com.alensu.springbootmall.constant.ProductCategory;
+import com.alensu.springbootmall.dto.ProductQueryParams;
 import com.alensu.springbootmall.dto.ProductRequest;
 import com.alensu.springbootmall.model.Product;
 import org.springframework.http.ResponseEntity;
@@ -20,5 +21,5 @@ public interface ProductService {
 
     void deleteProduct(Integer productId);
 
-    List<Product> getProducts(ProductCategory category, String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 }

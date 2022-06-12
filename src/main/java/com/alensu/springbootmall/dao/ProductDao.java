@@ -1,6 +1,7 @@
 package com.alensu.springbootmall.dao;
 
 import com.alensu.springbootmall.constant.ProductCategory;
+import com.alensu.springbootmall.dto.ProductQueryParams;
 import com.alensu.springbootmall.dto.ProductRequest;
 import com.alensu.springbootmall.model.Product;
 
@@ -16,5 +17,5 @@ public interface ProductDao {
 
     void deleteProduct(Integer productId);
 
-    List<Product> getProducts(ProductCategory category, String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 }

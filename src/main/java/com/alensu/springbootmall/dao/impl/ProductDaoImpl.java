@@ -56,6 +56,27 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
+    public Integer countProduct(ProductQueryParams productQueryParams) {
+        String sql = "SELECT COUNT(*) FROM product WHERE 1 = 1";
+        Map<String, Object> map = new HashMap<>();
+
+        //查詢條件
+        if (productQueryParams.getCategory() != null) {
+            sql += " AND category = :category ";
+            map.put("category", productQueryParams.getCategory().toString());
+        }
+
+        if (productQueryParams.getSearch() != null) {
+            sql += " AND product_name LIKE :product_name ";
+            map.put("product_name", "%" + productQueryParams.getSearch() + "%");
+        }
+
+
+        //queryForObject通常用來取得count
+        return jdbcTemplate.queryForObject(sql, map, Integer.class);
+    }
+
+    @Override
     public Product getProductById(Integer productId) {
 
 

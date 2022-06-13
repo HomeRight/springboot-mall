@@ -1,5 +1,6 @@
 package com.alensu.springbootmall.controller;
 
+import com.alensu.springbootmall.dto.UserLoginRequest;
 import com.alensu.springbootmall.dto.UserRegisterRequest;
 import com.alensu.springbootmall.model.User;
 import com.alensu.springbootmall.service.UserService;
@@ -27,5 +28,14 @@ public class UserController {
         User user = userService.getUserById(userId);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    }
+
+
+    @PostMapping("/users/login")
+    public ResponseEntity<User> login(@RequestBody @Valid UserLoginRequest userLoginRequest) {
+
+        User user = userService.login(userLoginRequest);
+
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 }

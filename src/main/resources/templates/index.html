@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="spring boot mall"/>
+    <meta name="author" content="alen su"/>
+    <title>spring boot mall</title>
+</head>
+<body>
+
+<h1>登入</h1>
+<form method='post' action='#' th:action="@{/login}" th:object="${userLoginRequest}" id="login">
+    <label for="loginEmail"> email帳號：</label><br/>
+    <input id="loginEmail" type='text' th:field="*{email}"/><br/>
+    <label for="loginPassword"> 密碼：</label><br/>
+    <input id="loginPassword" type='text' th:field="*{password}"/><br/>
+    <input type='submit' value='登入'>
+</form>
+
+<h1>註冊</h1>
+<form method='post' action='#' th:action="@{/register}" th:object="${userRegisterRequest}" id="register">
+    <label for="registerEmail"> email帳號：</label><br/>
+    <input id="registerEmail" type='text' th:field="*{email}"/><br/>
+    <label for="registerPassword"> 密碼：</label><br/>
+    <input id="registerPassword" type='text' th:field="*{password}"/><br/>
+    <input type='submit' value='註冊'>
+</form>
+
+</body>
+</html>

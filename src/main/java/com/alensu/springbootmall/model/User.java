@@ -1,5 +1,6 @@
 package com.alensu.springbootmall.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -9,12 +10,16 @@ public class User {
 
     private Integer userId;
 
-//    @JsonProperty("e_mail")
+    //    @JsonProperty("e_mail")
     private String email;
 
     @JsonIgnore
     private String password;
+
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createdDate;
+
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastModifiedDate;
 
     public Integer getUserId() {

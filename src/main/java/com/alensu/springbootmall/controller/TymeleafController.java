@@ -33,6 +33,16 @@ public class TymeleafController {
     }
 
 
+    @GetMapping("/welcome")
+    public String welcome(Model model) {
+//        UserLoginRequest userLoginRequest = new UserLoginRequest();
+//        UserRegisterRequest userRegisterRequest = new UserRegisterRequest();
+//        model.addAttribute("userLoginRequest", userLoginRequest);
+//        model.addAttribute("userRegisterRequest", userRegisterRequest);
+        return "welcome";
+    }
+
+
     @PostMapping("/login")
     public String login(@ModelAttribute UserLoginRequest userLoginRequest, HttpServletRequest req) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -54,7 +64,7 @@ public class TymeleafController {
             if (userResponseEntity.getStatusCode().equals(HttpStatus.OK)) {
 
                 System.out.println("成功登入");
-                return "loginSuccess";
+                return "redirect:/welcome";
             } else {
                 return "loginFail";
             }

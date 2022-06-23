@@ -6,6 +6,21 @@
   font-family: "Noto Sans TC", sans-serif;
 }
 
+div.container {
+  /* border: 3px solid black; */
+  /* width: 100%; */
+  /* min-width: 1000px; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* flex-grow: initial; */
+  /* overflow: scroll; */
+  /* align-items: center; */
+
+  /* center 、 flex-end 、 flex-start  、space-around 、space-evenly 、space-between*/
+  /* justify-content: space-evenly; */
+  /* flex-direction: row; */
+}
+
 h1,
 h2,
 h3,
@@ -26,10 +41,12 @@ header {
   background-color: #d9d9d9;
   width: 100%;
   padding: 1rem;
+  /* flex: 1 1 500px; */
 }
 
 nav {
   background-color: #453f3f;
+  width: 100%;
 }
 
 nav ul {
@@ -60,25 +77,54 @@ nav ul li a:hover {
 
 main {
   width: 100%;
+  /* max-width: 100%; */
   display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  /* align-items: center; */
+}
+
+section {
+  /* width: 100%; */
+  /* 寬度最大值 */
+  /* border: 3px solid black; */
+  /* width: 300px;
+  height: 300px; */
+  /* 寬度成長倍率 */
+  /* flex-grow: 1; */
+  /* 寬度最小值 */
+  /* flex-basis: 200px; */
+
+  /* flex-shrink: 1; */
+  /* display: flex; */
+}
+
+section.left iframe {
+  height: 500px;
+}
+
+section.left {
+  flex: 2 1 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.right {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 section.left,
 section.right {
-  width: 100%;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 section.right h4 {
   font-size: 1.25rem;
   text-align: center;
-}
-
-section.right,
-section.left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 section p {
@@ -87,4 +133,26 @@ section p {
 
 .active {
   color: white;
+}
+
+#curve_chart {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 550px) {
+  #curve_chart {
+    width: 100%;
+    height: 40%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  div.container {
+     min-width: 1000px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
 }

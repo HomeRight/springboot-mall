@@ -1,24 +1,24 @@
 * {
-  padding: 0;
-  margin: 0;
-  /* content-box(向外擴) 、border-box(向內縮) */
-  box-sizing: border-box;
-  font-family: "Noto Sans TC", sans-serif;
+    padding: 0;
+    margin: 0;
+    /* content-box(向外擴) 、border-box(向內縮) */
+    box-sizing: border-box;
+    font-family: "Noto Sans TC", sans-serif;
 }
 
 div.container {
-  /* border: 3px solid black; */
-  /* width: 100%; */
-  /* min-width: 1000px; */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* flex-grow: initial; */
-  /* overflow: scroll; */
-  /* align-items: center; */
+    /* border: 3px solid black; */
+    /* width: 100%; */
+    /* min-width: 1000px; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-grow: initial; */
+    /* overflow: scroll; */
+    /* align-items: center; */
 
-  /* center 、 flex-end 、 flex-start  、space-around 、space-evenly 、space-between*/
-  /* justify-content: space-evenly; */
-  /* flex-direction: row; */
+    /* center 、 flex-end 、 flex-start  、space-around 、space-evenly 、space-between*/
+    /* justify-content: space-evenly; */
+    /* flex-direction: row; */
 }
 
 h1,
@@ -26,133 +26,144 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 .headerTitle {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 .headerText {
-  font-size: 1rem;
+    font-size: 1rem;
+}
+
+#headerBox {
+    flex: 4 1 500px;
+}
+
+#logoutButton {
+    display: flex;
+    flex: 1 1 500px;
 }
 
 header {
-  background-color: #d9d9d9;
-  width: 100%;
-  padding: 1rem;
-  /* flex: 1 1 500px; */
+    background-color: #d9d9d9;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    /* flex: 1 1 500px; */
 }
 
 nav {
-  background-color: #453f3f;
-  width: 100%;
+    background-color: #453f3f;
+    width: 100%;
 }
 
 nav ul {
-  display: flex;
-  padding-left: 1rem;
-  list-style-type: none;
+    display: flex;
+    padding-left: 1rem;
+    list-style-type: none;
 }
 
 nav ul li {
-  /* 只有a本身可以按 */
-  /* padding: 0.5rem 0.75rem; */
+    /* 只有a本身可以按 */
+    /* padding: 0.5rem 0.75rem; */
 
-  display: flex;
+    display: flex;
 }
 
 nav ul li a {
-  padding: 0.5rem 0.75rem;
-  color: rgb(172, 172, 172);
-  text-decoration: none;
-  font-size: 1.25rem;
-  transition: all 0.5s ease;
+    padding: 0.5rem 0.75rem;
+    color: rgb(172, 172, 172);
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: all 0.5s ease;
 }
 
 nav ul li a:hover {
-  /* background-color: yellow; */
-  color: white;
+    /* background-color: yellow; */
+    color: white;
 }
 
 main {
-  width: 100%;
-  /* max-width: 100%; */
-  display: flex;
-  /* flex-direction: row; */
-  flex-wrap: wrap;
-  /* align-items: center; */
+    width: 100%;
+    /* max-width: 100%; */
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    /* align-items: center; */
 }
 
 section {
-  /* width: 100%; */
-  /* 寬度最大值 */
-  /* border: 3px solid black; */
-  /* width: 300px;
-  height: 300px; */
-  /* 寬度成長倍率 */
-  /* flex-grow: 1; */
-  /* 寬度最小值 */
-  /* flex-basis: 200px; */
+    /* width: 100%; */
+    /* 寬度最大值 */
+    /* border: 3px solid black; */
+    /* width: 300px;
+    height: 300px; */
+    /* 寬度成長倍率 */
+    /* flex-grow: 1; */
+    /* 寬度最小值 */
+    /* flex-basis: 200px; */
 
-  /* flex-shrink: 1; */
-  /* display: flex; */
+    /* flex-shrink: 1; */
+    /* display: flex; */
 }
 
 section.left iframe {
-  height: 500px;
+    height: 500px;
 }
 
 section.left {
-  flex: 2 1 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex: 2 1 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section.right {
-  flex: 1 1 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex: 1 1 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section.left,
 section.right {
-  padding: 1.5rem;
+    padding: 1.5rem;
 }
 
 section.right h4 {
-  font-size: 1.25rem;
-  text-align: center;
+    font-size: 1.25rem;
+    text-align: center;
 }
 
 section p {
-  margin: 1.5rem 0rem;
+    margin: 1.5rem 0rem;
 }
 
 .active {
-  color: white;
+    color: white;
 }
 
 #curve_chart {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 @media screen and (max-width: 550px) {
-  #curve_chart {
-    width: 100%;
-    height: 40%;
-  }
+    #curve_chart {
+        width: 100%;
+        height: 40%;
+    }
 }
 
 @media screen and (max-width: 650px) {
-  div.container {
-     min-width: 1000px;
-  }
+    div.container {
+        min-width: 1000px;
+    }
 
-  nav ul {
-    flex-direction: column;
-  }
+    nav ul {
+        flex-direction: column;
+    }
 }

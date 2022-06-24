@@ -43,6 +43,16 @@ public class TymeleafController {
     }
 
 
+    @GetMapping("/logout")
+    public String logout(Model model) {
+        UserLoginRequest userLoginRequest = new UserLoginRequest();
+        UserRegisterRequest userRegisterRequest = new UserRegisterRequest();
+        model.addAttribute("userLoginRequest", userLoginRequest);
+        model.addAttribute("userRegisterRequest", userRegisterRequest);
+        return "index";
+    }
+
+
     @PostMapping("/login")
     public String login(@ModelAttribute UserLoginRequest userLoginRequest, HttpServletRequest req) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -98,7 +108,7 @@ public class TymeleafController {
             if (userResponseEntity.getStatusCode().equals(HttpStatus.CREATED)) {
 
                 System.out.println("註冊成功");
-                return "loginSuccess";
+                return "redirect:/welcome";
             } else {
                 return "loginFail";
             }

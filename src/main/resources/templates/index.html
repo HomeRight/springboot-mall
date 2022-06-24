@@ -6,26 +6,131 @@
     <meta name="description" content="spring boot mall"/>
     <meta name="author" content="alen su"/>
     <title>spring boot mall</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" th:href="@{/css/login.css}"/>
 </head>
 <body>
 
-<h1>登入</h1>
-<form method='post' action='#' th:action="@{/login}" th:object="${userLoginRequest}" id="login">
-    <label for="loginEmail"> email帳號：</label><br/>
-    <input id="loginEmail" type='text' th:field="*{email}"/><br/>
-    <label for="loginPassword"> 密碼：</label><br/>
-    <input id="loginPassword" type='text' th:field="*{password}"/><br/>
-    <input type='submit' value='登入'>
-</form>
+<div class="container1">
+    <section class="left">
+        <!--        <a href="https://storyset.com/user">User illustrations by Storyset</a>-->
+        <img th:src="@{/gif/Sign up.gif}" alt="login"/>
+    </section>
+    <section class="right">
+        <div id="box">
+            <h1 style="color: white">Welcome!</h1>
+            <form method='post' action='#' th:action="@{/login}" th:object="${userLoginRequest}" id="login">
+                <div class="mb-3">
+                    <label for="loginEmail" class="form-label"
+                    >Email address</label
+                    >
+                    <input
+                            type="email"
+                            class="form-control"
+                            id="loginEmail"
+                            aria-describedby="emailHelp"
+                            th:field="*{email}"
+                    />
+                    <div id="emailHelp" class="form-text">
+                        We'll never share your email with anyone else.
+                    </div>
+                </div>
 
-<h1>註冊</h1>
-<form method='post' action='#' th:action="@{/register}" th:object="${userRegisterRequest}" id="register">
-    <label for="registerEmail"> email帳號：</label><br/>
-    <input id="registerEmail" type='text' th:field="*{email}"/><br/>
-    <label for="registerPassword"> 密碼：</label><br/>
-    <input id="registerPassword" type='text' th:field="*{password}"/><br/>
-    <input type='submit' value='註冊'>
-</form>
+                <div class="mb-3">
+                    <label for="loginPassword" class="form-label"
+                    >Password</label
+                    >
+                    <input type="password"
+                           class="form-control"
+                           id="loginPassword"
+                           th:field="*{password}"
+                    />
+                </div>
+                <button type="submit" class="btn btn-primary">登入</button>
+                <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                >
+                    註冊
+                </button>
+            </form>
 
+
+            <!-- Modal -->
+            <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <form method='post' action='#' th:action="@{/register}" th:object="${userRegisterRequest}" id="register">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">註冊表單</h5>
+                                <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label"
+                                    >Email address</label
+                                    >
+                                    <input
+                                            type="email"
+                                            class="form-control"
+                                            id="registerEmail"
+                                            aria-describedby="emailHelp"
+                                            th:field="*{email}"
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label"
+                                    >Password</label
+                                    >
+                                    <input
+                                            type="password"
+                                            class="form-control"
+                                            id="registerPassword"
+                                            th:field="*{password}"
+                                    />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal"
+                                >
+                                    Close
+                                </button>
+                                <button type="submit" class="btn btn-primary">完成</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"
+></script>
 </body>
 </html>

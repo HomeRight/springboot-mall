@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="zh-Hant" >
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>台灣發展歷史網頁</title>
-    <meta name="description" content="介紹台灣發展歷史" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" th:href="@{/png/taiwanIcon.png}" />
-    <link rel="bookmark" th:href="@{/png/taiwanIcon.png}" />
+    <meta name="description" content="介紹台灣發展歷史"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="shortcut icon" th:href="@{/png/taiwanIcon.png}"/>
+    <link rel="bookmark" th:href="@{/png/taiwanIcon.png}"/>
     <link
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet" th:href="@{/css/twicon.css}" />
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" th:href="@{/css/twicon.css}"/>
     <script
             type="text/javascript"
             src="https://www.gstatic.com/charts/loader.js"
     ></script>
     <script type="text/javascript">
-        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.load("current", {packages: ["corechart"]});
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
@@ -42,7 +48,7 @@
             var options = {
                 title: "台灣過去50年GDP變化圖表",
                 curveType: "function",
-                legend: { position: "bottom" },
+                legend: {position: "bottom"},
             };
 
             var chart = new google.visualization.LineChart(
@@ -52,16 +58,23 @@
             chart.draw(data, options);
         }
     </script>
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
 <!-- 標題 -->
-<div class="container">
+<div class="container1">
     <header>
-        <h1 class="headerTitle">
-            <i class="twicon-main-island"></i>台灣經濟發展歷史
-        </h1>
-        <h3 class="headerText">過去70年台灣經濟發展的歷史及相關政策</h3>
+        <div id="headerBox">
+            <h1 class="headerTitle">
+                <i class="twicon-main-island"></i>台灣經濟發展歷史
+            </h1>
+            <h3 class="headerText">過去70年台灣經濟發展的歷史及相關政策</h3>
+        </div>
+        <div>
+            <form method='get' id="logoutButton" action='#' th:action="@{/logout}">
+                <button type="submit" class="btn btn-primary">登出</button>
+            </form>
+        </div>
     </header>
     <!-- 導覽列 -->
     <nav>
@@ -100,8 +113,8 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
             ></iframe>
-            <br />
-            <div id="curve_chart" ></div>
+            <br/>
+            <div id="curve_chart"></div>
         </section>
         <section class="right">
             <h4>你知道台灣在哪裡嗎?</h4>

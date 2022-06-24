@@ -159,7 +159,7 @@ section p {
 @media screen and (max-width: 650px) {
     #curve_chart {
         display: flex;
-        width: 40vw;
+        width: 60vw;
         height: 60vh;
         justify-content: center;
         align-items: center;
@@ -177,7 +177,7 @@ section p {
 
     section.left iframe {
         display: flex;
-        width: 40vw;
+        width: 60vw;
         height: 60vh;
         justify-content: center;
         align-items: center;

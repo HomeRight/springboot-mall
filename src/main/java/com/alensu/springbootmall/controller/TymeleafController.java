@@ -42,6 +42,15 @@ public class TymeleafController {
         return "welcome";
     }
 
+    @GetMapping("/travel")
+    public String travel(Model model) {
+//        UserLoginRequest userLoginRequest = new UserLoginRequest();
+//        UserRegisterRequest userRegisterRequest = new UserRegisterRequest();
+//        model.addAttribute("userLoginRequest", userLoginRequest);
+//        model.addAttribute("userRegisterRequest", userRegisterRequest);
+        return "travel";
+    }
+
 
     @GetMapping("/logout")
     public String logout(Model model) {

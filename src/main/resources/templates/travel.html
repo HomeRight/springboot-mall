@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>夏威夷旅遊租借服務</title>
+    <meta
+            name="description"
+            content="我們提供夏威夷旅遊租借服務，例如:衝浪板 車子 帳篷 等等"
+    />
+    <meta name="robots" content="index, follow"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <!-- google font -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" th:href="@{/css/travel.css}"/>
+</head>
+<body>
+<!-- header -->
+<header>
+    <div class="logo">
+        <img th:src="@{/icons/black logo.svg}" alt="Logo"/>
+        <h1>夏威夷旅遊租借服務</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="">首頁</a></li>
+            <li><a href="">關於我們</a></li>
+            <li><a href="">會員登入</a></li>
+            <li><a href="">聯絡我們</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- image part of the first page -->
+    <section class="backImg">
+        <div class="filter"></div>
+        <h3>
+            準備好享受夏威夷風情了嗎?<br/>
+            現在開始準備
+        </h3>
+        <button class="start">現在開始</button>
+    </section>
+
+    <!-- second page -->
+    <section class="second">
+        <h2>
+            透過給予最好的品質與服務，我們幫助您獲得最好的<br/>
+            <span style="color: #3cebd6">夏威夷旅遊經驗</span>
+        </h2>
+
+        <section class="cards">
+            <div class="card">
+                <img
+                        th:src="@{/pictures/sean-o-KMn4VEeEPR8-unsplash.jpg}"
+                        alt="picture"
+                />
+                <h4>快速運送</h4>
+                <p>
+                    24小時隨叫隨送，1小時快速送達，24小時隨叫隨送，1小時快速送達，24小時隨叫隨送，1小時快速送達
+                </p>
+                <a href="#">運送地點</a>
+            </div>
+            <div class="card">
+                <img
+                        th:src="@{/pictures/braden-jarvis-prSogOoFmkw-unsplash.jpg}"
+                        alt="picture"
+                />
+                <h4>付款方便</h4>
+                <p>
+                    手機APP一鍵下單，24小時隨叫隨送，手機APP一鍵下單，24小時隨叫隨送，手機APP一鍵下單，24小時隨叫隨送
+                </p>
+                <a href="#">了解更多</a>
+            </div>
+            <div class="card">
+                <img
+                        th:src="@{/pictures/tatonomusic-FFCgotROOTY-unsplash.jpg}"
+                        alt="picture"
+                />
+                <h4>種類多樣</h4>
+                <p>
+                    機車快遞75元起、專件包車155元起，機車快遞75元起、專件包車155元起，機車快遞75元起、專件包車155元起
+                </p>
+                <a href="#">線上搜尋</a>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer>
+    <div class="logo">
+        <img th:src="@{/icons/black logo.svg}" alt="Logo"/>
+        <h1>夏威夷旅遊租借服務</h1>
+    </div>
+    <section class="navBar">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </section>
+    <section class="iconBar">
+        <a href="#"><img th:src="@{/icons/facebook.svg}" alt="facebook"/></a>
+        <a href="#"><img th:src="@{/icons/youtube.svg}" alt="youtube"/></a>
+        <a href="#"><img th:src="@{/icons/instagram.svg}" alt="instagram"/></a>
+        <a href="#"><img th:src="@{/icons/twitter.svg}" alt="twitter"/></a>
+    </section>
+</footer>
+</body>
+</html>

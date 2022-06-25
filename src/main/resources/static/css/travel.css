@@ -1,0 +1,199 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header div.logo {
+    display: flex;
+    align-items: center;
+    flex: 5 1 400px;
+    margin-left: 2rem;
+}
+header div.logo img {
+    width: 6vw;
+    height: 6vw;
+}
+header nav {
+    flex: 2 1 400px;
+}
+header nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+header nav ul li a {
+    color: #09777d;
+    text-decoration: none;
+    font-size: 1.35rem;
+}
+
+main section.backImg {
+    min-height: 90vh;
+    width: 100%;
+    background-image: url(../pictures/pexels-photo-416676.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+main section.backImg h3 {
+    font-size: 3.5rem;
+    color: white;
+    margin: 1rem 0rem;
+}
+main section.backImg button.start {
+    background-color: #3cebd6;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+main section.backImg div.filter {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+main section.second {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+main section.second h2 {
+    font-size: 2rem;
+    margin: 2rem 0rem;
+}
+main section.second section.cards {
+    display: flex;
+    width: 80%;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+main section.second section.cards div.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    flex: 1 1 300px;
+}
+main section.second section.cards div.card img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    margin: 1rem 0rem;
+}
+main section.second section.cards div.card h4 {
+    font-size: 2rem;
+    margin: 1rem 0rem;
+}
+main section.second section.cards div.card p {
+    font-size: 1.5rem;
+}
+main section.second section.cards div.card a {
+    margin: 1rem 0rem;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    color: white;
+    background-color: #09777d;
+    font-size: 1.25rem;
+}
+
+footer {
+    background-color: #8e8888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50vh;
+    justify-content: space-around;
+}
+footer div.logo {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+footer div.logo img {
+    width: 6vw;
+    height: 6vw;
+}
+footer section.navBar {
+    width: 30%;
+}
+footer section.navBar ul {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+footer section.navBar ul li {
+    flex-basis: 100px;
+}
+footer section.navBar ul li a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.35rem;
+}
+footer section.iconBar a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.35rem;
+    margin: 0rem 1rem;
+}
+footer section.iconBar a img {
+    width: 5vw;
+    height: 5vw;
+}
+
+@media screen and (max-width: 550px) {
+    header div.logo img {
+        width: 15vw;
+        height: 15vh;
+    }
+
+    footer div.logo img {
+        width: 15vw;
+        height: 15vh;
+    }
+    footer section.iconBar {
+        margin-top: 1rem;
+    }
+    footer section.iconBar a img {
+        width: 10vw;
+        height: 10vh;
+    }
+}
+@media screen and (max-width: 700px) {
+    main section.second section.cards div.card img {
+        width: 40vw;
+        height: 40vw;
+    }
+}/*# sourceMappingURL=style.css.map */

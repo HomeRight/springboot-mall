@@ -4,6 +4,7 @@ import com.alensu.springbootmall.dao.OrderDao;
 import com.alensu.springbootmall.dao.ProductDao;
 import com.alensu.springbootmall.dto.BuyItem;
 import com.alensu.springbootmall.dto.CreateOrderRequest;
+import com.alensu.springbootmall.model.Order;
 import com.alensu.springbootmall.model.OrderItem;
 import com.alensu.springbootmall.model.Product;
 import com.alensu.springbootmall.service.OrderService;
@@ -54,5 +55,14 @@ public class OrderServiceImpl implements OrderService {
         orderDao.createOrderItems(orderId, orderItemList);
 
         return orderId;
+    }
+
+    @Override
+    public Order getOrderById(Integer orderId) {
+        Order order = orderDao.getOrderById(orderId);
+        List<OrderItem> orderItems = orderDao.getOrderItemsByOrderId(orderId);
+        order.setOrderItemList(orderItems);
+
+        return order;
     }
 }

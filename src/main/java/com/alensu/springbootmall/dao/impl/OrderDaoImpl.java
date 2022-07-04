@@ -2,7 +2,10 @@ package com.alensu.springbootmall.dao.impl;
 
 import com.alensu.springbootmall.dao.OrderDao;
 import com.alensu.springbootmall.dto.CreateOrderRequest;
+import com.alensu.springbootmall.model.Order;
 import com.alensu.springbootmall.model.OrderItem;
+import com.alensu.springbootmall.rowmapper.OrderItemMapper;
+import com.alensu.springbootmall.rowmapper.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -85,6 +88,35 @@ public class OrderDaoImpl implements OrderDao {
 
         jdbcTemplate.batchUpdate(sql, mapSqlParameterSources);
 
+
+    }
+
+    @Override
+    public Order getOrderById(Integer orderId) {
+
+        String sql = "select order_id, total_amount, user_id, created_date, last_modified_date from order_summary where order_id = :orderId";
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("orderId", orderId);
+
+        List<Order> orderList = jdbcTemplate.query(sql, map, new OrderMapper());
+
+        return orderList.size() > 0 ? orderList.get(0) : null;
+    }
+
+    @Override
+    public List<OrderItem> getOrderItemsByOrderId(Integer orderId) {
+        String sql = "select oi.order_item_id, oi.order_id, oi.product_id, oi.quantity, oi.amount, " +
+                "p.product_name, p.image_url from order_item oi " +
+                "left join product p on oi.product_id = p.product_id " +
+                "where oi.order_id = :orderId";
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("orderId", orderId);
+
+        List<OrderItem> orderItemList = jdbcTemplate.query(sql, map, new OrderItemMapper());
+
+        return orderItemList.size() > 0 ? orderItemList : null;
 
     }
 }

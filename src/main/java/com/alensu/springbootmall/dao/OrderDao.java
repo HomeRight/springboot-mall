@@ -1,6 +1,7 @@
 package com.alensu.springbootmall.dao;
 
 import com.alensu.springbootmall.dto.CreateOrderRequest;
+import com.alensu.springbootmall.dto.OrderQueryParams;
 import com.alensu.springbootmall.model.Order;
 import com.alensu.springbootmall.model.OrderItem;
 import org.springframework.data.relational.core.sql.In;
@@ -16,4 +17,8 @@ public interface OrderDao {
     Order getOrderById(Integer orderId);
 
     List<OrderItem> getOrderItemsByOrderId(Integer orderId);
+
+    List<Order> getOrders(OrderQueryParams orderQueryParams);
+
+    Integer countOrder(OrderQueryParams orderQueryParams);
 }

@@ -12,7 +12,7 @@ public class OrderMapper implements RowMapper<Order> {
         Order order = new Order();
 
         order.setOrderId(resultSet.getInt("order_id"));
-        order.setTotalAmout(resultSet.getInt("total_amount"));
+        order.setTotalAmount(resultSet.getInt("total_amount"));
         order.setUserId(resultSet.getInt("user_id"));
         order.setCreatedDate(resultSet.getTimestamp("created_date"));
         order.setLastModifiedDate(resultSet.getTimestamp("last_modified_date"));

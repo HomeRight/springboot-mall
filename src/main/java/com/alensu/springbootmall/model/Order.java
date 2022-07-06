@@ -7,7 +7,7 @@ public class Order {
 
     private Integer orderId;
     private Integer userId;
-    private Integer totalAmout;
+    private Integer totalAmount;
     private Date createdDate;
     private Date lastModifiedDate;
 
@@ -29,12 +29,12 @@ public class Order {
         this.userId = userId;
     }
 
-    public Integer getTotalAmout() {
-        return totalAmout;
+    public Integer getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setTotalAmout(Integer totalAmout) {
-        this.totalAmout = totalAmout;
+    public void setTotalAmount(Integer totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     public Date getCreatedDate() {

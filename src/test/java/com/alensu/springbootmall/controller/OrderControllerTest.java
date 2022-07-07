@@ -80,7 +80,7 @@ class OrderControllerTest {
         String json = objectMapper.writeValueAsString(createOrderRequest);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .post("/users/{userId}/orders", 1)
+                .post("/users/{userId}/orders", 2)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json);
 
